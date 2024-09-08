@@ -1,0 +1,6 @@
+a=input("Enter word :")
+word=a.lower()
+b=input("The letter you want to count in the word : ")
+letter=b.lower()
+ans=word.count(letter)
+print(ans)
