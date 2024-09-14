@@ -10,4 +10,4 @@ for j in range(len(l1)-1):
         store=l1[j]
     else:
         store=l1[j+1]
-print(store)
+print("maximum number: ",store)
