@@ -4,11 +4,9 @@ for i in range(num):
     push=input("Enter to append: " )
     l1.append(push)
 print(l1)
-
-rem=input("Enter to remove : ")
-for i in range(len(l1)):
-    yo=l1[i]
-    if rem==yo:
-        l1.remove(yo)
-        break
-print(l1)
+# Doubt ???
+# rem=input("Enter to remove : ")
+# for i in range(len(l1)):
+#     if rem==l1[i]:
+#         l1.remove(l1[i])
+# print(l1)

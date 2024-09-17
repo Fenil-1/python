@@ -6,8 +6,8 @@ for i in range(num):
 print(l1)
 print("##### banana , orange or apple presence check !!!!!!! #########33")
 if "apple" in l1:
-    print("yes it is present")
+    print("yes apple is present")
 elif "orange" in l1:
-    print("yes it is present")
+    print("yes orange is present")
 elif "banana" in l1:
-    print("yes it is present")
+    print("yes banana is present")
