@@ -21,7 +21,8 @@ elif num2>num1:
         if rem==0:
             print(f"GCD is {remainder[-2]}")
             break
-
+else:
+    print(f"GCD is {num1}")
 
 
 
