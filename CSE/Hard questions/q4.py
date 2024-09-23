@@ -13,6 +13,6 @@ for i in l1:
 for j in l1:
     if j%2==0:
         odd.append(j)
-
+print(f"New lis {odd}")
 print(f"The {enter} number is : {odd[enter-1]}")
 

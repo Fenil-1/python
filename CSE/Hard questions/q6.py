@@ -8,4 +8,4 @@ k=int(input("enter how much you wnat to move the list to left"))
 for i in range(k):
     l1.append(l1[0])
     l1.remove(l1[0])
-print(l1)
+print(f"gotcha {l1}")
