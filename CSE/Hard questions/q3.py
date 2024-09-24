@@ -1,22 +1,34 @@
-file = open("largefile.txt" , "r")
-# list=file.readlines()
-list=[]
-for line in file:
-    parts=line.split()
-    list.append(parts)
-print(parts)
+def process_file(input_file, output_file):
+    name_sums = {}
 
-print(list)
+    # Read the file and process each line
+    with open(input_file, 'r') as file:
+        for line in file:
+            parts = line.split()
+            name = parts[0]  # The first part is the name
+            numbers = map(int, parts[1:])  # Convert the rest to integers
+            total = sum(numbers)  # Calculate the sum of integers
 
-for i in list:
-    sum=0
-    for j in range(1,len(i)):
-        sum+=int(i[j])
-    for k in range(1,len(i)):
-        i.remove(i[1])
-    i.append(sum)
-print(list)
+            # Store the sum in the dictionary
+            if name in name_sums:
+                name_sums[name] += total
+            else:
+                name_sums[name] = total
 
-for x in range(2):
-    if 
-file.close()
+    # Identify the name with the highest sum
+    highest_name = None
+    highest_sum = -1
+
+    for name, total in name_sums.items():
+        if total > highest_sum:
+            highest_sum = total
+            highest_name = name
+
+    # Output the name and the corresponding sum to a new file
+    with open(output_file, 'w') as outfile:
+        outfile.write(f"{highest_name} {highest_sum}\n")
+
+# Example usage
+input_file = 'largefile.txt'  # Replace with your input file name
+output_file = 'result.txt'  # Replace with your desired output file name
+process_file(input_file, output_file)

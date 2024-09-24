@@ -1,3 +1,6 @@
-raj 15 5 
+raj 150 5 
 rohan 20 5
 raitu 4 24
+fenil 80 4
+lolu 34 34
+fafda 0 4
