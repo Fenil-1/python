@@ -5,7 +5,7 @@ print(1)
 even=0
 for i in range(num):
     sum=p1+p2
-    print(sum,end="")
+    print(sum,end=" ")
     p2=p1
     p1=sum
     if sum%2==0:

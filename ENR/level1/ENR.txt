@@ -1,0 +1,555 @@
+1.
+def find_smallest_m(n):
+    left, right = 1, n
+    while left < right:
+        m = (left + right) // 2
+        sum_m = m * (m + 1) // 2
+        
+        if sum_m >= n:
+            right = m
+        else:
+            left = m + 1
+    
+    return left
+
+# Test the function
+test_cases = int(input("Enter to check"))
+print(find_smallest_m(test_cases))
+
+2.
+n=int(input("Enter the number of rows : "))
+list=[]
+for i in range(n):
+    temp_list=[]
+    for j in range(i+1):
+        if j==0 or i==j:
+            temp_list.append(1)
+        else:
+            temp_list.append(list[i-1][j]+list[i-1][j-1])
+    list.append(temp_list)
+
+print(list)
+
+3.
+import math
+final=int(input("Enter the last number you want to print"))
+num=int(input("Enter a number you want to divide : "))
+
+
+for i in range((math.ceil(final/num))):
+    new=num*(i+1)
+    start=1+(i*num)
+    for j in range(1,num+1):
+        if i%2==0:
+            print(start,end=" ")
+            start+=1
+        else:
+            print(new,end=" ")
+            new-=1
+            
+        
+    print()
+
+4.
+def fact(n):
+    uf=1
+    for i in range(2,n+1):
+        uf*=i
+    return uf 
+
+def sum_fact(x):
+    sum=0
+    for i in range(1,x+1):
+        sum+=fact(i)
+    return sum
+
+#Testing
+print(sum_fact(3))
+
+5.
+num=int(input("enter till you want to print fabonacci "))
+p1=1
+p2=0
+print(1)
+even=0
+for i in range(num):
+    sum=p1+p2
+    print(sum,end=" ")
+    p2=p1
+    p1=sum
+    if sum%2==0:
+        even+=sum
+print(f"the sum of even numbers in the series is {even}")
+
+6.
+def is_power_of_three(n):
+    if n == 1:
+        return True
+    if n < 1:
+        return False
+    # Recursive case
+    return is_power_of_three(n / 3)
+#test\/
+inp=int(input("Enter to check the power of three"))
+print(is_power_of_three(inp))
+
+7.a
+a=int(input("enter no"))
+
+for y in range(1,a+1):
+    for x in range(y,a):
+        print(" ",end="")  
+    for z in range(y):
+        print("*",end=" ")
+    print()
+for y in range(1,1+a):    
+    for i in range(y):
+        print(" ",end="")
+    for j in range(y,a):
+        print("*", end=" ")
+    print()
+7.b
+a=int(input("enter no"))
+
+for y in range(1,a+1):
+    prt=1
+    for z in range(y,a+1):
+        print(prt,end="")
+        prt+=1
+    print()
+
+8.
+num1=int(input("enter one number : "))
+num2=int(input("enter two number : "))
+
+if num1>num2:
+    remainder=[]
+    for i in range(9):
+        rem=num1%num2
+        num1=num2
+        num2=rem
+        remainder.append(rem)
+        if rem==0:
+            print(f"GCD is {remainder[-2]}")
+            break
+elif num2>num1:
+    remainder=[]
+    for i in range(9):
+        rem=num2%num1
+        num2=num1
+        num1=rem
+        remainder.append(rem)
+        if rem==0:
+            print(f"GCD is {remainder[-2]}")
+            break
+else:
+    print(f"GCD is {num1}")
+
+9.
+num=int(input("Enter the number of data you want to add : "))
+l1=[]
+for i in range(num):
+    push=int(input("Enter to append: " ))
+    l1.append(push)
+print(l1)
+
+set=set(l1)
+l2=list(set)
+print(f"Duplicate items removed :{l2}")
+
+10.
+str=input("Enter a sentence : ")
+l1=str.split()
+
+l1.reverse()
+for i in range(len(l1)):
+    print(l1[i] , end=" ")
+
+11.
+num=int(input("Enter the number of data you want to add : "))
+l1=[]
+for i in range(num):
+    push=int(input("Enter to append: " ))
+    l1.append(push)
+print(l1)
+
+for i in range(len(l1)):
+    if l1[i]==0:
+        l1.remove(l1[i])
+        l1.append(0)
+print(f"Zero has more value to the end {l1}")
+
+12.
+num=int(input("Enter the number of data you want to add : "))
+l1=[]
+for i in range(num):
+    push=int(input("Enter to append: " ))
+    l1.append(push)
+print(l1)
+l2=[]
+for i in range(len(l1)):
+    if l1[i]>0:
+        if l1[i]%2==0:
+            l2.append("positive even")
+        else:
+            l2.append("positive odd")
+    if l1[i]<0:
+        if l1[i]%2==0:
+            l2.append("negative even")
+        else:
+            l2.append("negative odd")
+    if l1[i]==0:
+        l2.append("neutral")
+print(f"YoU GoT iT RiGhT BaBy {l2}")
+    
+13.
+
+
+def max(x):
+    max=0
+    for i in range(len(x)):
+        if x[i]>max:
+            max=x[i]
+        else:
+            max=max
+    
+    return max
+
+#call
+num=int(input("Enter the number of strings you want to add: "))
+l1=[]
+for i in range(num):
+    push=int(input("Enter to append: " ))
+    l1.append(push)
+print(l1)
+print(f"MAx number : {max(l1)}")
+
+14.
+num=int(input("Enter the number of strings you want to add: "))
+l1=[]
+for i in range(num):
+    push=int(input("Enter to append: " ))
+    l1.append(push)
+print(l1)
+l2=[]
+
+for i in range(len(l1)):
+    if l1[i]%2==0:
+        l2.append(l1[i])
+        l2.append((l1[i])**2)
+print(l2)
+
+15.
+def max(x):
+    max=0
+    for i in range(len(x)):
+        if x[i]>max:
+            max=x[i]
+        else:
+            max=max
+    
+    return max
+
+
+num=int(input("Enter the number of strings you want to add: "))
+l1=[]
+for i in range(num):
+    push=int(input("Enter to append: " ))
+    l1.append(push)
+print(l1)
+
+print(f"MAx number : {max(l1)}")
+high=max(l1)
+while high in l1:
+    l1.remove(high)
+print(f"The second maximum value is {max(l1)}")
+
+
+16.
+num=int(input("WHich table : "))
+for i in range(1,11):
+    for j in range(1):
+        print( num ,"x" ,i, "=", num*i)
+    print()
+
+17.
+num=int(input("enter : "))
+def prime(n):
+    count=0
+    for x in range(2,n):
+        if n%x==0:
+            count+=1
+    if count==0:
+        return n
+    
+for i in range(2,num+1):
+    if prime(i)==i:
+        print(prime(i) , end=" ")
+
+18.
+
+rows=int(input("enter rows : "))
+column=int(input("enter column : "))
+p1=1
+p2=0
+sum=0
+
+for i in range(rows):
+    for j in range(column):
+        print(sum, end=" ")
+        p2=p1
+        p1=sum
+        sum=p1+p2
+    print()
+19.
+# Get the number of rows from the user
+rows = int(input("Enter the number of rows: "))
+
+# Loop through each row
+for i in range(1, rows + 1):
+    # Print the first half of the pattern (increasing order)
+    for j in range(1, i + 1):
+        print(j, end='')
+    
+    # Print the second half of the pattern (decreasing order)
+    for j in range(i - 1, 0, -1):
+        print(j, end='')
+    
+    # Move to the next line
+    print()
+
+20.
+def is_sorted(list):
+    return list == sorted(list)
+numbers = [1, 2, 3, 4, 5]
+print(is_sorted(numbers))
+
+21.
+
+N = int(input("Enter a number: "))
+sum = 0
+for i in range(1, N + 1):
+    sum += i
+print(f"The sum of the first {N} natural numbers is: {sum}")
+
+22.
+n = int(input("Enter an integer: "))
+sum = 0
+while n > 0:
+    digit = n % 10 
+    sum += digit  
+    n = n // 10  
+
+print(f"The sum of the digits is: {sum}")
+
+23.
+str = input("Enter a number: ")
+num_digits = len(str)
+sum = 0
+for digit in str:
+    sum += int(digit) ** num_digits
+if sum == int(str):
+    print(f"{int(str)} is an Armstrong number.")
+else:
+    print(f"{int(str)} is not an Armstrong number.")
+
+24.
+num=int(input("Enter to check even/odd :"))
+if num%2==0:
+    print(num ,"is an even number")
+else:
+    print(num ,"is an odd number")
+
+25.
+num=int(input("Enter the number of numbers you want to add: "))
+l1=[]
+for i in range(num):
+    push=int(input("Enter to append: " ))
+    l1.append(push)
+print(l1)
+
+for j in range(len(l1)-1):
+    if l1[j]>l1[j+1]:
+        store=l1[j]
+    else:
+        store=l1[j+1]
+print("maximum number: ",store)
+
+26.
+num=int(input("Enter a number : "))
+if num==0:
+    print("The given number is zero !!")
+elif num>0:
+    print("The given number is positive !!")
+elif num<0:
+    print("The given number is negative !!")
+
+27.
+str=input("Enter a string")
+rev=str[::-1]
+print(rev)
+
+28.
+num=int(input("Enter a number : "))
+fact=1
+for i in range(2,num+1):
+    fact*=i
+print(f"factorial of given number is {fact}")
+
+
+29.
+num=int(input("Enter the numbers to add : "))
+l1=[]
+for i in range(num):
+    push=int(input("Enter to append: " ))
+    l1.append(push)
+print(l1)
+sum=0
+for i in range(len(l1)):
+    sum+=l1[i]
+print(f'The sum of all numbers in list is {sum}')
+
+30.
+num=int(input("Enter the number of data you want to add : "))
+l1=[]
+for i in range(num):
+    push=input("Enter to append: " )
+    l1.append(push)
+print(l1)
+
+print(f"the last element of list is {l1[-1]}")
+
+31.
+num=int(input("Enter the number of data you want to add : "))
+l1=[]
+for i in range(num):
+    push=input("Enter to append: " )
+    l1.append(push)
+print(l1)
+
+string=""
+for i in range(len(l1)):
+    string+=str(l1[i])
+print(f"Concentrated string is {string}")
+
+32.
+import math
+num=int(input("enter a numbe"))
+a= math.sqrt(num)
+b=math.floor(a)
+count=0
+for i in range(2,b+1):
+    if num%i == 0:
+        count+=1
+
+if count>=1:
+    print("the number is not prime")
+else:
+    print("the numbe is prime")
+
+33.
+num=int(input("Enter the number of data you want to add : "))
+l1=[]
+for i in range(num):
+    push=input("Enter to append: " )
+    l1.append(push)
+print(l1)
+# Doubt ???
+rem=input("Enter to remove : ")
+for i in l1[:]:
+    if rem==i:
+        l1.remove(i)
+print(l1)
+
+34.
+num=int(input("Enter the number of data you want to add : "))
+l1=[]
+for i in range(num):
+    push=int(input("Enter to append: " ))
+    l1.append(push)
+print(l1)
+sum=0
+for i in range(len(l1)):
+    if l1[i]%2==0:
+        sum+=l1[i]
+print(f"The sum of even numbers is : {sum}")
+
+
+35.
+num=int(input("Enter the number of data you want to add : "))
+dict={}
+for i in range(num):
+    push=int(input("Enter to append: " ))
+    dict[i]=push
+print(dict)
+
+sum=0
+for j in range(num):
+    sum+=dict[j]
+print(f"The sum of values : {sum}")
+
+36.
+dict1={"a": 1,"b":2}
+dict2={"c":3,"d":4}
+dict1.update(dict2)
+print(dict1)
+
+37.
+age=int(input("Enter your age: "))
+if age>0 and age<12:
+    print("you are a child")
+elif age>=12 and age<=19:
+    print("you are a teenager")
+elif age>=20 and age<=60:
+    print("you are an adult")
+elif age>60:
+    print("you are a senior citizen")
+    
+38.
+p=int(input("Enter principle amount "))
+r=int(input("Enter rate of interest "))
+t=int(input("Enter time period"))
+si=(p*r*t)/100
+print(f"Simple interest is {si}")
+
+39.
+int1=int(input("enter a first number"))
+int2=int(input("enter a second number"))
+print(f"The quotient of int1 divided by int2 {int1//int2} while Remainder is {int1%int2}")
+
+
+40.
+s1=int(input("Enter the sides of traingle : "))
+s2=int(input("Enter the sides of traingle : "))
+s3=int(input("Enter the sides of traingle : "))
+if s1==s2==s3:
+    print(f"The triangle is equilateral")
+    
+elif s1==s2!=s3 or s2==s3!=s1 or s1==s3!=s2:
+    print(f"The triangle is isoceles")
+else:
+    print(f"The triangle is scalene")
+
+41.
+num=int(input("Enter the number fruits you want to add : "))
+l1=[]
+for i in range(num):
+    push=input("Enter to append: " )
+    l1.append(push)
+print(l1)
+print("##### banana , orange or apple presence check !!!!!!! #########33")
+if "apple" in l1:
+    print("yes apple is present")
+elif "orange" in l1:
+    print("yes orange is present")
+elif "banana" in l1:
+    print("yes banana is present")
+
+42.
+list1=["a","b",1,2]
+list2=["a","b",1,2]
+print(list1 is list2)#even tho both the list are same they are different objects in memory .. to return true for this you should use"==" operator !!!!!
+print(list1 is not list2)
+
+
+

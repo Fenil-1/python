@@ -12,4 +12,4 @@ def prime(n):
 
 for i in range(2,num+1):
     if prime(i)==i:
-        print(prime(i))
+        print(prime(i) , end=" ")

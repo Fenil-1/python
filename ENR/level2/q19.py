@@ -3,13 +3,8 @@ rows = int(input("Enter the number of rows: "))
 
 # Loop through each row
 for i in range(1, rows + 1):
-    # Print the first half of the pattern (increasing order)
-    for j in range(1, i + 1):
-        print(j, end='')
+    # Generate the string for the first half (increasing order) and second half (decreasing order)
+    pattern = 'Meet'.join("3", "3") +
     
-    # Print the second half of the pattern (decreasing order)
-    for j in range(i - 1, 0, -1):
-        print(j, end='')
-    
-    # Move to the next line
-    print()
+    # Print the final pattern in one go
+    print(pattern)
